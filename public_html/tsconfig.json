@@ -1,0 +1,16 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES5",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "lib": [
+            "DOM",
+            "ES5",
+            "ES2015"
+        ]
+    }
+}
