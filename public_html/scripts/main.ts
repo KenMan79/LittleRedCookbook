@@ -7,8 +7,10 @@ class Main {
 
     public Init(): void {
         let recipeOutput: any = $("#recipeOutput");
-        let recipes: any = $.getJSON("/recipes.json");
-        recipeOutput.text(JSON.parse(recipes));
+        $.getJSON("/recipes.json", (data: any) =>
+        {
+            recipeOutput.text(JSON.stringify(data));
+        });
     }
 }
 

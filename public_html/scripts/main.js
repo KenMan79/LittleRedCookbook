@@ -5,8 +5,9 @@ var Main = /** @class */ (function () {
     }
     Main.prototype.Init = function () {
         var recipeOutput = $("#recipeOutput");
-        var recipes = $.getJSON("/recipes.json");
-        recipeOutput.text(JSON.parse(recipes));
+        $.getJSON("/recipes.json", function (data) {
+            recipeOutput.text(JSON.stringify(data));
+        });
     };
     return Main;
 }());
