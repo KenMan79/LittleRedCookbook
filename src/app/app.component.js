@@ -9,17 +9,23 @@ exports.__esModule = true;
 exports.AppComponent = void 0;
 var core_1 = require("@angular/core");
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.Recipes =
-            [
-                {
-                    recipe_name: "Some name"
-                },
-                {
-                    recipe_name: "Some other name"
-                }
-            ];
+    function AppComponent(recipeDataAccess) {
+        this.recipeDataAccess = recipeDataAccess;
+        this.Recipes = [];
+        this.GetRecipes();
     }
+    /**
+     * Summary: Go and get our recipes to show on the page.
+     */
+    AppComponent.prototype.GetRecipes = function () {
+        var _this = this;
+        this.recipeDataAccess.GetRecipes()
+            .subscribe(function (data) {
+            for (var i = 0; i < data.length; i++) {
+                _this.Recipes.push(data[i]);
+            }
+        });
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'app-root',

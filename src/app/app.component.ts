@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RecipeDataAccess } from './Data/RecipeDataAccess';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +9,25 @@ import { Component } from '@angular/core';
 
 export class AppComponent
 {
-  public Recipes: any[];
+  public Recipes: any[] = [];
 
-  public constructor()
+  public constructor(private recipeDataAccess: RecipeDataAccess)
   {
-    this.Recipes =
-    [
+    this.GetRecipes();
+  }
+
+  /**
+   * Summary: Go and get our recipes to show on the page.
+   */
+  public GetRecipes()
+  {
+    this.recipeDataAccess.GetRecipes()
+    .subscribe((data: any) =>
+    {
+      for (let i = 0; i < data.length; i++)
       {
-          recipe_name: "Some name"
-      },
-      {
-          recipe_name: "Some other name"
+        this.Recipes.push(data[i]);
       }
-    ];
+    });
   }
 }
