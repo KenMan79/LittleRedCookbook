@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row" *ngFor="let recipe of Recipes">
+        <div class="col">
+            <p>{{ recipe.RecipeName }}</p>
+            <ul>
+                <li *ngFor="let ingredient of recipe.Ingredients">
+                    {{ ingredient }}
+                </li>
+            </ul>
+            <hr />
+        </div>
+    </div>
+</div>

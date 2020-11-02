@@ -1,8 +1,16 @@
 [
     {
-        "RecipeName": "Some name"
+        "RecipeName": "Some name",
+        "Ingredients": [
+            "Salt & Pepper",
+            "Baking soda"
+        ]
     },
     {
-        "RecipeName": "Some other name"
+        "RecipeName": "Some other name",
+        "Ingredients": [
+            "Vinegar",
+            "Oil"
+        ]
     }
 ]
