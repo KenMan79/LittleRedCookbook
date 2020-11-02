@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <div class="row">
+      <div id="mainBanner">
+          <p id="mainBanner_logo">Little Red Cookbook</p>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div *ngFor="let recipe of Recipes">
+        {{ recipe.recipe_name }}
+      </div><br/>
+  </div>
+</div>

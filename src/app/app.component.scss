@@ -1,0 +1,17 @@
+#mainBanner
+{
+    background-image: url("../assets/img/banner.jpg");
+    background-repeat: repeat-x;
+    width: 100%;
+    text-align: center;
+
+    &_logo
+    {
+        margin: 0;
+        padding: 10px;
+        color: gold;
+        font-weight: 700;
+        font-size: 16px;
+        text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    }
+}

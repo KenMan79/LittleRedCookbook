@@ -1,4 +1,5 @@
 let $: any;
+let angular: any;
 
 class Main {
     constructor() {
@@ -9,7 +10,10 @@ class Main {
         let recipeOutput: any = $("#recipeOutput");
         $.getJSON("/recipes.json", (data: any) =>
         {
-            recipeOutput.text(JSON.stringify(data));
+            for (let i = 0; i < data.length; i++)
+            {
+                recipeOutput.append(data[i].recipe_name + "<br/>");
+            }
         });
     }
 }

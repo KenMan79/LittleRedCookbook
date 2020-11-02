@@ -1,4 +1,5 @@
 var $;
+var angular;
 var Main = /** @class */ (function () {
     function Main() {
         this.Init();
@@ -6,7 +7,9 @@ var Main = /** @class */ (function () {
     Main.prototype.Init = function () {
         var recipeOutput = $("#recipeOutput");
         $.getJSON("/recipes.json", function (data) {
-            recipeOutput.text(JSON.stringify(data));
+            for (var i = 0; i < data.length; i++) {
+                recipeOutput.append(data[i].recipe_name + "<br/>");
+            }
         });
     };
     return Main;
